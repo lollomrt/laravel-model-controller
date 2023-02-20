@@ -21,7 +21,7 @@ Route::get('/', [ComicController::class,'index'])->name('homepage');
 //     return view('home', compact('comics'));
 // })->name('homepage');
 
-Route::get('/detail_comic/{id}', [ComicController::class,'getSingle'])->name('single-comic');
+Route::get('/detail_comic/{slug}', [ComicController::class,'getSingle'])->name('single-comic');
 
 // Route::get('/detail_comic/{id}', function ($id) {
 //     $comics = config('comics');

@@ -49,11 +49,11 @@
                     </div>
                     <div class="staff-container d-flex justify-content-between border-bottom py-2">
                         <p class="w-25">Art By:</p>
-                        <p class="w-75 url">{{ implode(", ", $single['artists']) }}</p>    
+                        <p class="w-75 url">{{ $single['artists'] }}</p>    
                     </div>
                     <div class="staff-container d-flex justify-content-between border-bottom py-2">
                         <p class="w-25">Written By:</p>
-                        <p class="w-75 url">{{ implode(", ", $single['writers']) }}<p>    
+                        <p class="w-75 url">{{ $single['writers'] }}<p>    
                     </div>
                 </div>
                 <div class="col-6 ps-4">

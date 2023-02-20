@@ -12,8 +12,10 @@ class ComicController extends Controller
         return view('home', compact('comics'));
     }
 
-    public function getSingle($id){
-        $single = Comic::find($id);
+    public function getSingle($slug){
+        // $single = Comic::find($id);
+        $single = Comic::where('slug', $slug)->get();
+        $single = $single[0];
         // dd($single);
         return view('detail_comic', compact('single'));
     }

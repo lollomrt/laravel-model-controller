@@ -6,8 +6,8 @@
             <span class="label-blue">Current series</span>
             <div class="row d-flex gap-5 flex-column align-items-center">
                 <div class="col d-flex flex-wrap gap-1-rem w-100">
-                    @foreach($comics as $key => $comic)
-                    <a href="{{route('single-comic', ['id' => $key])}}">
+                    @foreach($comics as $comic)
+                    <a href="{{route('single-comic', ['id' => $comic['id']])}}">
                         <div class="card card-styled border-0 back-dark text-white">
                             <img src="{{ $comic['thumb']}}" alt="">
                             <h6 class="my-2">{{ $comic['title']}}</h6>

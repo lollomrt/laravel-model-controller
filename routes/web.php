@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ComicController as ComicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,19 +14,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $comics = config('comics');
-    return view('home', compact('comics'));
-})->name('homepage');
+Route::get('/', [ComicController::class,'index'])->name('homepage');
 
-Route::get('/detail_comic/{id}', function ($id) {
-    $comics = config('comics');
-    $single = '';
-    foreach($comics as $key => $comic){
-        if($key == $id){
-            $single = $comic;
-        }
-    }
-    // dd($single);
-    return view('detail_comic', compact('single'));
-})->name('single-comic');
+// Route::get('/', function () {
+//     $comics = config('comics');
+//     return view('home', compact('comics'));
+// })->name('homepage');
+
+Route::get('/detail_comic/{id}', [ComicController::class,'getSingle'])->name('single-comic');
+
+// Route::get('/detail_comic/{id}', function ($id) {
+//     $comics = config('comics');
+//     $single = '';
+//     foreach($comics as $key => $comic){
+//         if($key == $id){
+//             $single = $comic;
+//         }
+//     }
+//     // dd($single);
+//     return view('detail_comic', compact('single'));
+// })->name('single-comic');
